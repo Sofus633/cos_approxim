@@ -23,6 +23,7 @@ def cos_app_global(x):
     y = 1
     cos_derivate_i = 1
     for i in range(1, precision):
+        print(x)
         y += cos_derivate[cos_derivate_i] * (pow(x, i)/math.factorial(i))
         cos_derivate_i += 1
         if cos_derivate_i > 3:
@@ -136,8 +137,11 @@ while True:
                 vec1.plot_eq()
                 vec2.plot_eq()
                 pygame.display.flip()
-
-    #pygame.display.flip()
+    if (iterations <= 50):
+        iterations += 1
+        vec1.plot_eq()
+        vec2.plot_eq()
+        pygame.display.flip()
     fpsClock.tick(fps)
 
-pygame. quit() 
+pygame.quit() 
